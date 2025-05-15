@@ -1,6 +1,6 @@
 # LLM-MAS-Collusion Benchmark
-
-## CleanUp Multi-Agent Experiment Framework
+## Liar's Bar 
+## CleanUp
 
 This repository contains a framework for running and analyzing multi-agent experiments in the CleanUp environment. Agents can be powered by various LLM providers (Azure, Gemini, Claude, etc.) and can form alliances, clean pollution, and compete for apples.
 
