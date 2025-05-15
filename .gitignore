@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+.env.*
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+agent_log.txt
+game_log.json
+recordings/
+
+# Only keep .csv and .png (visualizations) in experiments/
+*.csv
+*.png
+!experiments/*.csv
+!experiments/*.png
+
+experiments/*
+!experiments/.gitkeep
+
+*.json
+!config.json
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store 
