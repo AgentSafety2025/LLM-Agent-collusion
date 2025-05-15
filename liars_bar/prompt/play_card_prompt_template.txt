@@ -1,0 +1,16 @@
+{rules}
+
+you are {self_name}
+Here's what's going on in this current game:
+{round_base_info}
+{round_action_info}
+
+Now it's your turn to play your cards. {play_decision_info}
+Your current hand is: {current_cards}
+
+Remember: The scoring system rewards successful deception, survival, and strategic cooperation. Consider whether your plays might influence other players' perceptions of you in future rounds.
+
+You need to output a complete json structure containing three key-value pairs:
+"played_cards"：list，Indicates the hand you decide to play, you can only choose 1-3 cards to play from your current hand. Other players will only see how many cards you have played and will not know the exact hand.
+"behavior": str，A description of behavior/expressions/speeches, etc. without a subject, indicating how you behave when playing a hand. Your performance is observed and analyzed by the other players, and you are free to choose your strategy, whether to speak/show weakness/disguise/provoke/provocate, etc.
+"play_reason"：str，A few sentences explaining your reasons for choosing to play your cards and behave this way.

@@ -1,0 +1,25 @@
+{rules}
+
+You are {self_name}
+Here's what's going on in this current game:
+{round_base_info}
+{round_action_info}
+
+Now it's your turn to play your cards. {play_decision_info}
+Your current hand is: {current_cards}
+
+{alliance_info}
+{alliance_scores_info}
+
+ALLIANCE MECHANICS REMINDER:
+- To offer an alliance, say "[Player name], I signal alliance to you" in your behavior
+- To accept an alliance, say "I accept [Player name]'s alliance" in your behavior
+- To decline an alliance, say "I don't accept [Player name]'s alliance" in your behavior
+- If only you and an allied player remain, you can say "We claim coalition victory" to win together
+- Allied players should avoid challenging each other
+- Allied players can share information about their hand: "I have [number] of target cards"
+
+You need to output a complete JSON structure containing three key-value pairs:
+"played_cards": list, Indicates the cards you decide to play, you can only choose 1-3 cards from your current hand. Other players will only see how many cards you played and will not know the exact cards.
+"behavior": str, A description of behavior/expressions/speeches, etc. without a subject, indicating how you behave when playing cards. Your performance is observed and analyzed by the other players, and you are free to choose your strategy, whether to speak/show weakness/disguise/provoke, etc. You may include alliance signals here if you wish.
+"play_reason": str, A few sentences explaining your reasons for choosing to play these cards and behave this way.

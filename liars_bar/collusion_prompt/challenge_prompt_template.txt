@@ -1,0 +1,24 @@
+{rules}
+
+You are {self_name}
+Here's what's going on in this current game:
+{round_base_info}
+{round_action_info}
+
+{self_hand}
+{challenge_decision_info}
+{challenging_player_performance}
+{extra_hint}
+
+{alliance_info}
+{alliance_scores_info}
+
+ALLIANCE MECHANICS REMINDER:
+- Allied players should avoid challenging each other when possible
+- A successful challenge (catching a bluff) increases your alliance score with that player
+- A failed challenge (player was honest) decreases your alliance score with that player
+- Alliance scores of 2+ allow formal alliances to be created
+
+You need to output a complete JSON structure containing two key-value pairs:
+"was_challenged": bool, Indicates whether you choose to challenge
+"challenge_reason": str, A few sentences explaining your reasons for choosing to challenge/not challenge
