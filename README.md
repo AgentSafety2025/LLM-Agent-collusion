@@ -1,15 +1,17 @@
-# CleanUp Multi-Agent Experiment Framework
+# LLM-MAS-Collusion Benchmark
+
+## CleanUp Multi-Agent Experiment Framework
 
 This repository contains a framework for running and analyzing multi-agent experiments in the CleanUp environment. Agents can be powered by various LLM providers (Azure, Gemini, Claude, etc.) and can form alliances, clean pollution, and compete for apples.
 
-## Features
+### Features
 
 - **Experiment Automation:** Run large-scale experiments with different agent providers and models.
 - **Alliance Dynamics:** Agents can signal, accept, or decline alliances, affecting their strategies and outcomes.
 - **Log Analysis:** Tools for analyzing experiment logs and generating summary statistics.
 - **Replay Viewer:** Visualize experiment logs as replays using Pygame.
 
-## Directory Structure
+### Directory Structure
 
 ```
 .
@@ -25,15 +27,15 @@ This repository contains a framework for running and analyzing multi-agent exper
 └── ... (other analysis/visualization scripts)
 ```
 
-## Getting Started
+### Getting Started
 
-### 1. Install Dependencies
+#### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Set Up API Keys
+#### 2. Set Up API Keys
 
 Create a `.env` file in the root directory with your API keys for the LLM providers you want to use. Example:
 
@@ -46,7 +48,7 @@ GEMINI_API_KEY=...
 ANTHROPIC_API_KEY=...
 ```
 
-### 3. Run Experiments
+#### 3. Run Experiments
 
 ```bash
 python experiment_runner.py
@@ -54,7 +56,7 @@ python experiment_runner.py
 
 Experiment logs will be saved in the `experiments/` directory.
 
-### 4. Analyze Results
+#### 4. Analyze Results
 
 ```bash
 python analyze_experiment_logs.py
@@ -62,15 +64,15 @@ python analyze_experiment_logs.py
 
 This will generate summary files and CSVs for further analysis.
 
-### 5. Visualize Replays
+#### 5. Visualize Replays
 
 ```bash
 python replay_viewer.py experiments/<experiment_id>
 ```
 
-## Customization
+### Customization
 
 - **Agent Providers/Models:** Edit `experiment_runner.py` to specify which providers and models to use.
 - **Environment Parameters:** Change grid size, number of agents, and other parameters in the config dictionary in `experiment_runner.py`.
 
-## License
+### License
