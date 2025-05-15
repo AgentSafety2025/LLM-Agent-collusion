@@ -1,15 +1,108 @@
 # LLM-MAS-Collusion Benchmark
-## Liar's Bar 
-## CleanUp
 
-This repository contains a framework for running and analyzing multi-agent experiments in the CleanUp environment. Agents can be powered by various LLM providers (Azure, Gemini, Claude, etc.) and can form alliances, clean pollution, and compete for apples.
+This repository contains frameworks for running and analyzing multi-agent experiments in two different environments: Liar's Bar and CleanUp.
+
+## Liar's Bar
+
+An AI-driven liar's bar game battle framework powered by large language models (LLMs).
+
+### File Structure
+
+The program is mainly divided into two parts: the game core and analysis tools.
+
+#### Game Core
+
+- `game.py` - The main program for the liar's bar game
+- `player.py` - The LLM agents participating in the game
+- `game_record.py` - Used to save and retrieve game records
+- `llm_client.py` - Configures the model interface and initiates LLM requests
+- `multi_game_runner.py` - Runs multiple rounds of the game in batch mode
+
+#### Analysis Tools
+
+- `game_analyze.py` - Collects and analyzes all match data
+- `player_matchup_analyze.py` - Extracts and analyzes match records between AI opponents
+- `json_convert.py` - Converts JSON game records into readable text
+
+### Configuration
+
+Set up the necessary dependencies using a conda environment:
+
+```bash
+pip install openai anthropic google-generativeai requests
+```
+
+Currently supported models:
+- Claude 3.7 sonnet
+- GPT-4o-mini
+- Mistral large
+- Gemini 1.5 pro
+
+The API configuration for this project is in `llm_client.py`
+
+This project utilizes the New API framework https://github.com/Calcium-Ion/new-api?tab=readme-ov-file to standardize API calls. You will need to configure the corresponding model API interface yourself.
+
+Alternatively, you can use a similar API management project like https://github.com/songquanpeng/one-api to unify API calls.
+
+### Usage
+
+#### Running the Game
+
+After completing the project setup, specify the correct model names in the `player_configs` section of `game.py` and `multi_game_runner.py`.
+
+Run a single game:
+```bash
+python game.py
+```
+
+Run multiple games:
+```bash
+python multi_game_runner.py -n 10
+```
+Specify the number of game rounds after `-n`. The default is 10 rounds.
+
+#### Analysis
+Game records are saved in JSON format in the `game_records` folder.
+
+To convert JSON files into a more readable text format:
+```bash
+python json_convert.py
+```
+
+The converted files will be stored in the `converted_game_records` folder.
+
+To extract and analyze AI-versus-AI match records:
+```bash
+python player_matchup_analyze.py
+```
+
+The extracted records will be saved in the `matchup_records` folder.
+
+To collect and print statistics of all match data:
+```bash
+python game_analyze.py
+```
+
+### Demo
+
+The project has already played 50 matches using four models: DeepSeek-R1, o3-mini, Gemini-2-flash-thinking, and Claude-3.7-Sonnet. The recorded matches are stored in the `demo_records` folder.
+
+### Known Issues
+
+The model's output may be unstable during the card-playing and challenge phases. If the output does not meet the game rules, the system will automatically retry. If multiple interruptions occur due to output errors, you can increase the retry attempts for model calls in the `choose_cards_to_play` and `decide_challenge` functions in `player.py`
+
+You can also modify the prompt templates in the `prompt` folder (`play_card_prompt_template.txt` and `challenge_prompt_template.txt`) to enforce stricter output formatting. However, this may impact the model's reasoning ability.
+
+## CleanUp Environment
+
+A framework for running and analyzing multi-agent experiments in the CleanUp environment. Agents can be powered by various LLM providers (Azure, Gemini, Claude, etc.) and can form alliances, clean pollution, and compete for apples.
 
 ### Features
 
-- **Experiment Automation:** Run large-scale experiments with different agent providers and models.
-- **Alliance Dynamics:** Agents can signal, accept, or decline alliances, affecting their strategies and outcomes.
-- **Log Analysis:** Tools for analyzing experiment logs and generating summary statistics.
-- **Replay Viewer:** Visualize experiment logs as replays using Pygame.
+- **Experiment Automation:** Run large-scale experiments with different agent providers and models
+- **Alliance Dynamics:** Agents can signal, accept, or decline alliances, affecting their strategies and outcomes
+- **Log Analysis:** Tools for analyzing experiment logs and generating summary statistics
+- **Replay Viewer:** Visualize experiment logs as replays using Pygame
 
 ### Directory Structure
 
@@ -72,7 +165,5 @@ python replay_viewer.py experiments/<experiment_id>
 
 ### Customization
 
-- **Agent Providers/Models:** Edit `experiment_runner.py` to specify which providers and models to use.
-- **Environment Parameters:** Change grid size, number of agents, and other parameters in the config dictionary in `experiment_runner.py`.
-
-### License
+- **Agent Providers/Models:** Edit `experiment_runner.py` to specify which providers and models to use
+- **Environment Parameters:** Change grid size, number of agents, and other parameters in the config dictionary in `experiment_runner.py`
