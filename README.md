@@ -74,5 +74,3 @@ python replay_viewer.py experiments/<experiment_id>
 - **Environment Parameters:** Change grid size, number of agents, and other parameters in the config dictionary in `experiment_runner.py`.
 
 ## License
-
-MIT License 
