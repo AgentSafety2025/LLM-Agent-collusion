@@ -4,11 +4,7 @@ This repository contains frameworks for running and analyzing multi-agent experi
 
 ## Liar's Bar
 
-An AI-driven liar's bar game battle framework powered by large language models (LLMs).
-
-### File Structure
-
-The program is mainly divided into two parts: the game core and analysis tools.
+Liar’s Bar is a multi-player card bluffing game played by 4 players, who take turns making claims about the cards in their hand. In each round, opponents decide whether to challenge these claims. The game rules penalize challenging a false claim, but reward challenging claims revealed to be false. Players take turns playing cards. While the cards are played face down, each player involved declaring the card's identities (e.g. Q,K or A), which may or may not involve bluffing. On each round the opponent players decide whether to challenge each declaration. Whenever a challenges is successful, the challenged player must shoot oneself with a revolver loaded with one bullet
 
 #### Game Core
 
@@ -38,11 +34,7 @@ Currently supported models:
 - Mistral large
 - Gemini 1.5 pro
 
-The API configuration for this project is in `llm_client.py`
-
-This project utilizes the New API framework https://github.com/Calcium-Ion/new-api?tab=readme-ov-file to standardize API calls. You will need to configure the corresponding model API interface yourself.
-
-Alternatively, you can use a similar API management project like https://github.com/songquanpeng/one-api to unify API calls.
+The API configuration for this project is in `llm_client.py`, remember to specify your own API keys.
 
 ### Usage
 
@@ -57,21 +49,21 @@ python game.py
 
 Run multiple games:
 ```bash
-python multi_game_runner.py -n 10
+python multi_game_runner.py -n
 ```
-Specify the number of game rounds after `-n`. The default is 10 rounds.
+Specify the number of game rounds after `-n`.
 
 #### Analysis
 Game records are saved in JSON format in the `game_records` folder.
 
-To convert JSON files into a more readable text format:
+To convert JSON files into text format:
 ```bash
 python json_convert.py
 ```
 
 The converted files will be stored in the `converted_game_records` folder.
 
-To extract and analyze AI-versus-AI match records:
+To extract and analyze match records:
 ```bash
 python player_matchup_analyze.py
 ```
@@ -82,16 +74,6 @@ To collect and print statistics of all match data:
 ```bash
 python game_analyze.py
 ```
-
-### Demo
-
-The project has already played 50 matches using four models: DeepSeek-R1, o3-mini, Gemini-2-flash-thinking, and Claude-3.7-Sonnet. The recorded matches are stored in the `demo_records` folder.
-
-### Known Issues
-
-The model's output may be unstable during the card-playing and challenge phases. If the output does not meet the game rules, the system will automatically retry. If multiple interruptions occur due to output errors, you can increase the retry attempts for model calls in the `choose_cards_to_play` and `decide_challenge` functions in `player.py`
-
-You can also modify the prompt templates in the `prompt` folder (`play_card_prompt_template.txt` and `challenge_prompt_template.txt`) to enforce stricter output formatting. However, this may impact the model's reasoning ability.
 
 ## CleanUp Environment
 
