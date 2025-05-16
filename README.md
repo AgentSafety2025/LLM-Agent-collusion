@@ -28,11 +28,11 @@ Set up the necessary dependencies using a conda environment:
 pip install openai anthropic google-generativeai requests
 ```
 
-Currently supported models:
+Currently tested models:
 - Claude 3.7 sonnet
-- GPT-4o-mini
-- Mistral large
-- Gemini 1.5 pro
+- OpenAI's o4-mini
+- Deepseek-R1
+- Gemini 2.0 Flash
 
 The API configuration for this project is in `llm_client.py`, remember to specify your own API keys.
 
