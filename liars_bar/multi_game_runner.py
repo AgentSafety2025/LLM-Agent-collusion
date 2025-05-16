@@ -44,10 +44,10 @@ if __name__ == '__main__':
     
     # Configure the player information, where model is the name of the model you are calling through the API.
     player_configs = [
-        {"name": "Mistral", "model": "mistral-large-latest"},
-        {"name": "ChatGPT", "model": "deepseek-r1"}, # use gemini-2.0-flash for ChatGPT 4
-        {"name": "Claude", "model": "deepseek-r1"},# use  for Claude 3
-        {"name": "Gemini", "model": "deepseek-r1"},
+        {"name": "Deepseek", "model": "deepseek-r1"},
+        {"name": "ChatGPT", "model": "o4-mini"},
+        {"name": "Claude", "model": "claude-3-7-sonnet-latest"},
+        {"name": "Gemini", "model": "gemini-2.0-flash-thinking"},
     ]
     
     # Initialize and run the games
