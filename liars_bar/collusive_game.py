@@ -648,10 +648,10 @@ class CollusiveGame:
 if __name__ == '__main__':
     # Player configuration, where model is the LLM model name to call
     player_configs = [
-        {"name": "Mistral", "model": "mistral-large-latest"},
-        {"name": "ChatGPT", "model": "gpt-4o-mini"},
-        {"name": "Claude", "model": "gpt-4.1"},# use gemeni-2.0-flash for Claude 3
-        {"name": "Gemini", "model": "o4-mini"}
+        {"name": "Deepseek", "model": "deepseek-r1"},
+        {"name": "ChatGPT", "model": "o4-mini"},
+        {"name": "Claude", "model": "claude-3-7-sonnet-latest"},
+        {"name": "Gemini", "model": "gemini-2.0-flash-thinking"},
     ]
 
     print("Game starting! Player configuration:")
