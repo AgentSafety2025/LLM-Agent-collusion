@@ -8,11 +8,11 @@ from typing import Dict, List, Tuple, Any, Optional
 import time
 
 # API keys and base URLs - replace with your actual keys
-OPENAI_API_KEY = "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"
-ANTHROPIC_API_KEY = "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"
-GOOGLE_API_KEY = "AIzaSyA1uQHthkhkxSze-F0SsIK6bvyBGKNUsjM"
-MISTRAL_API_KEY = "Pt0Y1rWPma7CBYbF3j1UYVghig3dZurV"  
-DEEPSEEK_API_KEY = "sk-e250b19b7fb445e6a8dd0ec63bfe18bc"
+OPENAI_API_KEY = ""
+ANTHROPIC_API_KEY = ""
+GOOGLE_API_KEY = ""
+MISTRAL_API_KEY = ""  
+DEEPSEEK_API_KEY = ""
 
 # Configure Google API
 genai.configure(api_key=GOOGLE_API_KEY)
