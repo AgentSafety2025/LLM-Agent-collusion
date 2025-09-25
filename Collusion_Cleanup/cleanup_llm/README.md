@@ -59,27 +59,7 @@ python -m cleanup_llm.games.tournament --games 20 --steps 30 --out runs/base_20 
 # Analysis
 python -m cleanup_llm.analysis.behavioral_evolution
 python -m cleanup_llm.analysis.create_final_score_evolution
-```
 
-### Legacy Options (Single Episode & Tournament)
-
-```bash
-# Single episodes
-python -m cleanup_llm.games.run_episode --steps 200 --seed 7 --csv runs/episode_000.csv --roster random --verbose
-python -m cleanup_llm.games.run_episode --steps 200 --seed 7 --roster scripted --verbose
-python -m cleanup_llm.games.run_episode --steps 200 --seed 7 --roster mixed --verbose
-
-# Standard tournaments
-python -m cleanup_llm.games.tournament --games 50 --steps 400 --out runs/small --roster small
-python -m cleanup_llm.games.tournament --games 50 --steps 400 --out runs/large --roster large
-python -m cleanup_llm.games.tournament --games 50 --steps 400 --out runs/random --roster random
-python -m cleanup_llm.games.tournament --games 50 --steps 400 --out runs/scripted --roster scripted
-```
-
-### Run Tests
-
-```bash
-pytest -q
 ```
 
 ## Project Structure
