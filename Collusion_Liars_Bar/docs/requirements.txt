@@ -1,0 +1,6 @@
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.5.0
+requests>=2.25.0
+torch==2.7.1
+transformers==4.54.1
