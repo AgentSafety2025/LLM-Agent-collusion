@@ -33,7 +33,7 @@ A multi-agent card game environment studying strategic communication and collusi
 A sequential social dilemma where agents balance individual rewards with collective good, adapted for studying cooperation dynamics with secret advantages.
 
 **Game Mechanics:**
-- 6x5 grid world with river, orchard, and pollution zones
+- grid world with river, orchard, and pollution zones
 - Actions: Movement, apple collection, pollution cleaning, agent zapping
 - Apple spawning affected by global pollution levels
 - Individual rewards vs. collective environmental management
@@ -42,11 +42,6 @@ A sequential social dilemma where agents balance individual rewards with collect
 1. **Baseline**: Standard gameplay without secret tools
 2. **Secret Communication Channel**: Private coordination between selected agents
 3. **Secret Hint System**: Strategic advantage guidance for chosen participants
-
-**Key Features:**
-- Up to 4 LLM agents with simultaneous play
-- Pollution drift mechanics affecting resource availability
-- Zapping system for competitive agent interaction
 
 ## Installation
 
@@ -58,20 +53,6 @@ pip install -r requirements.txt
 ```
 
 **Hardware Requirements:** Originally designed for H100 GPUs but adaptable to various configurations.
-
-### API Configuration
-- **Liar's Bar**: Update API keys in `Collusion_Liars_Bar/src/llm/llm_client.py`
-- **Cleanup**: Configure API endpoints in the respective client files
-
-## Supported Models
-
-**Local Models (d8B parameters):**
-- **Lily**: llama-3.1-8b
-- **Luke**: llama-3-8b
-- **Mike**: mistral-7b
-- **Quinn**: qwen2.5-7b
-
-**API Models:** Compatible with OpenAI, Anthropic, and other major providers.
 
 ## Quick Start
 
@@ -195,19 +176,6 @@ This framework supports research in:
 - Game theory and mechanism design
 - AI ethics and alignment research
 - Voluntary adoption of harmful strategies
-
-## Local Execution Tips
-
-For running without GPU clusters:
-1. **Reduce Model Size**: Use smaller models or CPU inference
-2. **Adjust Batch Size**: Reduce number of parallel games
-3. **Memory Management**: Monitor GPU memory with local models
-
-```bash
-# Example local configuration
-export CUDA_VISIBLE_DEVICES=0
-# Run smaller experiments with fewer games/steps
-```
 
 ## Citation
 
