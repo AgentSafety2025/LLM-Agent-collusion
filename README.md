@@ -52,6 +52,13 @@ cd LLM-Agent-collusion
 pip install -r requirements.txt
 ```
 
+### Models we tested
+- LLaMA-3-8b-Instruct
+- LlaMa-3.1-8b-Instruct
+- Mistral-7b-Instruct-v0.3
+- Qwen2.5-7B-Instruct
+(All models are claimed as safety-aligned)
+
 **Hardware Requirements:** Originally designed for H100 GPUs but adaptable to various configurations.
 
 ## Quick Start
