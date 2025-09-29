@@ -6,7 +6,7 @@ A comprehensive research framework for investigating voluntary collusion behavio
 
 This project systematically explores how LLM agents discover and pursue collusive strategies that can harm other agents and human users. The framework implements two distinct strategic environments with secret collusion mechanisms to reveal conditions under which agents willingly engage in harmful collaboration despite recognizing its unfairness.
 
-![LLM Agent Voluntary Collusion Framework Overview](./assets/overview.png)
+![LLM Agent Voluntary Collusion Framework Overview](./asset/overview.png)
 
 ## Research Games
 
