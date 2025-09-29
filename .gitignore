@@ -127,8 +127,8 @@ recordings/
 # Only keep .csv and .png (visualizations) in experiments/
 *.csv
 *.png
-!experiments/*.csv
 !experiments/*.png
+!asset/*.png
 
 experiments/*
 !experiments/.gitkeep
